@@ -9,29 +9,29 @@ body{
     height:100%;
     font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     line-height:1.8;
-    color:#444;
+    color:#333;
     scroll-behavior:smooth;
 }
 
 /* PARALLAX IMAGES */
 
 .hero{
-    background-image:url("./images/mountain.jpg");
+    background-image:url("./images/image1.png");
     min-height:100vh;
 }
 
 .forest{
-    background-image:url("./images/forest.jpg");
-    min-height:60vh;
+    background-image:url("./images/image2.png");
+    min-height:70vh;
 }
 
 .planet{
-    background-image:url("./images/earth.jpg");
-    min-height:60vh;
+    background-image:url("./images/image3.png");
+    min-height:70vh;
 }
 
 .hero-end{
-    background-image:url("./images/sunset.jpg");
+    background-image:url("./images/image1.png");
     min-height:100vh;
 }
 
@@ -46,38 +46,45 @@ body{
     background-attachment:fixed;
 }
 
-/* OVERLAY */
+/* DARK OVERLAY */
 
 .overlay{
     position:absolute;
-    inset:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
     background:rgba(0,0,0,0.35);
 }
 
-/* TEXT */
+/* HERO TEXT */
 
 .ptext{
     position:absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
+    width:100%;
     text-align:center;
 }
 
 .textbg{
+    display:inline-block;
     background:rgba(0,0,0,0.75);
     color:white;
     padding:18px 35px;
-    font-size:2.3rem;
+    border-radius:12px;
+    font-size:2.5rem;
     font-weight:700;
     letter-spacing:3px;
-    border-radius:12px;
-    backdrop-filter:blur(5px);
+    text-transform:uppercase;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
 .transparent{
     background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.2);
+    backdrop-filter:blur(5px);
+    border:1px solid rgba(255,255,255,0.3);
 }
 
 /* CONTENT SECTIONS */
@@ -88,23 +95,24 @@ body{
 }
 
 .section h2{
-    font-size:2rem;
-    margin-bottom:20px;
+    font-size:2.3rem;
+    margin-bottom:25px;
 }
 
 .section p{
     max-width:900px;
     margin:auto;
+    font-size:1.05rem;
 }
 
 .section-light{
-    background:#f8f9fa;
+    background:#f8fafc;
     color:#444;
 }
 
 .section-dark{
     background:#1f2937;
-    color:#e5e7eb;
+    color:#f3f4f6;
 }
 
 /* FEATURE CARDS */
@@ -123,7 +131,7 @@ body{
     padding:25px;
     border-radius:15px;
     box-shadow:0 10px 25px rgba(0,0,0,0.15);
-    transition:0.3s;
+    transition:all 0.3s ease;
 }
 
 .card:hover{
@@ -131,12 +139,13 @@ body{
 }
 
 .card h3{
-    margin-bottom:15px;
     color:#2e7d32;
+    margin-bottom:15px;
 }
 
 .card p{
     color:#666;
+    font-size:15px;
 }
 
 /* FOOTER */
@@ -145,21 +154,44 @@ footer{
     background:#111827;
     color:white;
     text-align:center;
-    padding:40px 20px;
+    padding:50px 20px;
 }
 
 footer h3{
+    font-size:1.8rem;
     margin-bottom:10px;
-    font-size:1.5rem;
 }
 
 footer p{
     margin-top:8px;
+    opacity:0.9;
 }
 
-/* RESPONSIVE */
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ddd;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#4caf50;
+    border-radius:10px;
+}
+
+/* RESPONSIVE DESIGN */
 
 @media(max-width:768px){
+
+    .hero,
+    .forest,
+    .planet,
+    .hero-end{
+        background-attachment:scroll;
+    }
 
     .textbg{
         font-size:1.2rem;
@@ -172,17 +204,21 @@ footer p{
     }
 
     .section h2{
-        font-size:1.6rem;
-    }
-
-    .hero,
-    .forest,
-    .planet,
-    .hero-end{
-        background-attachment:scroll;
+        font-size:1.8rem;
     }
 
     .card{
         width:100%;
+    }
+}
+
+@media(max-width:480px){
+
+    .textbg{
+        font-size:1rem;
+    }
+
+    .section p{
+        font-size:0.95rem;
     }
 }
