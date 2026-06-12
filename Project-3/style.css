@@ -1,0 +1,188 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    height:100%;
+    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height:1.8;
+    color:#444;
+    scroll-behavior:smooth;
+}
+
+/* PARALLAX IMAGES */
+
+.hero{
+    background-image:url("./images/mountain.jpg");
+    min-height:100vh;
+}
+
+.forest{
+    background-image:url("./images/forest.jpg");
+    min-height:60vh;
+}
+
+.planet{
+    background-image:url("./images/earth.jpg");
+    min-height:60vh;
+}
+
+.hero-end{
+    background-image:url("./images/sunset.jpg");
+    min-height:100vh;
+}
+
+.hero,
+.forest,
+.planet,
+.hero-end{
+    position:relative;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+}
+
+/* OVERLAY */
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+/* TEXT */
+
+.ptext{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.textbg{
+    background:rgba(0,0,0,0.75);
+    color:white;
+    padding:18px 35px;
+    font-size:2.3rem;
+    font-weight:700;
+    letter-spacing:3px;
+    border-radius:12px;
+    backdrop-filter:blur(5px);
+}
+
+.transparent{
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+/* CONTENT SECTIONS */
+
+.section{
+    padding:80px 12%;
+    text-align:center;
+}
+
+.section h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+.section p{
+    max-width:900px;
+    margin:auto;
+}
+
+.section-light{
+    background:#f8f9fa;
+    color:#444;
+}
+
+.section-dark{
+    background:#1f2937;
+    color:#e5e7eb;
+}
+
+/* FEATURE CARDS */
+
+.features{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:300px;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#2e7d32;
+}
+
+.card p{
+    color:#666;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer h3{
+    margin-bottom:10px;
+    font-size:1.5rem;
+}
+
+footer p{
+    margin-top:8px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .textbg{
+        font-size:1.2rem;
+        padding:12px 20px;
+        letter-spacing:1px;
+    }
+
+    .section{
+        padding:50px 8%;
+    }
+
+    .section h2{
+        font-size:1.6rem;
+    }
+
+    .hero,
+    .forest,
+    .planet,
+    .hero-end{
+        background-attachment:scroll;
+    }
+
+    .card{
+        width:100%;
+    }
+}
